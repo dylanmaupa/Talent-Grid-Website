@@ -18,9 +18,9 @@
         </div>
 
         <div class="socials">
-            <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-linkedin-in"></i>
+            <img src="./images/fb-icon.svg" alt="">
+            <img src="./images/ig-icon.svg" alt="">
+            <img src="./images/linkedin-icon.svg" alt="">
         </div>
     </div>
 
@@ -142,11 +142,15 @@
                     successful.</p>
                 <div class="loading-circles">
                     <div class="circle-wrapper">
-                        <div class="circle"></div>
+                        <div class="circle progress">
+                            <span class="progValue">0%</span>
+                        </div>
                         <p>We Have The Answers To Your Business Process Questions</p>
                     </div>
-                    <div class="circle-wrapper">
-                        <div class="circle"></div>
+                    <div class="circle-wrapper ">
+                        <div class="circle progress2">
+                            <span class="progValue2">0%</span>
+                        </div>
                         <p>Call Center Is The Solution To Your Outsourcing Issues</p>
                     </div>
                 </div>
@@ -155,12 +159,13 @@
         </section>
 
         <!-- *SERVICES* -->
-        <section class="swiper" id="services">
+        <section id="services">
             <h3>We got you covered</h3>
             <h2>Your Outsourced Success Partner</h2>
 
-            <div class="wrapper swiper-wrapper mySwiper">
-                <div class="swiper-slide service">
+            <div class="wrapper">
+                <!-- <div class="swiper-wrapper"> -->
+                <div class="service">
                     <div class="img">
                         <img src="./images/serv1.png" alt="">
                     </div>
@@ -171,7 +176,7 @@
                         <p>Grow your business at a fraction of overhead cost</p>
                     </div>
                 </div>
-                <div class="swiper-slide service">
+                <div class="service">
                     <div class="img">
                         <img src="./images/serv2.png" alt="">
                     </div>
@@ -182,7 +187,7 @@
                         <p>Full time dedicated individual or team focusing only on your business</p>
                     </div>
                 </div>
-                <div class="swiper-slide service">
+                <div class="service">
                     <div class="img">
                         <img src="./images/serv3.png" alt="">
                     </div>
@@ -193,7 +198,7 @@
                         <p>Access to highly qualified professionals in any industry</p>
                     </div>
                 </div>
-                <div class="swiper-slide service">
+                <div class="service">
                     <div class="img">
                         <img src="./images/serv4.png" alt="">
                     </div>
@@ -204,7 +209,7 @@
                         <p>Grow your business at a fraction of overhead cost</p>
                     </div>
                 </div>
-                <div class="swiper-slide service">
+                <div class="service">
                     <div class="img">
                         <img src="./images/serv5.png" alt="">
                     </div>
@@ -215,6 +220,7 @@
                         <p>Grow your business at a fraction of overhead cost</p>
                     </div>
                 </div>
+                <!-- </div> -->
             </div>
         </section>
 
@@ -224,13 +230,36 @@
             <h2>Get a Free Consultation</h2>
 
             <form action="#">
-                <input type="text" placeholder="First Name">
-                <input type="text" placeholder="Surname">
-                <input type="text" placeholder="Email Address">
-                <input type="text" placeholder="Subject">
-                <input type="text" placeholder="Telphone">
-                <textarea cols="30" rows="10" placeholder="Message"></textarea>
-                <input type="submit" value="Send Message">
+                <div class="form-inputs">
+                    <label for="">First Name <span>*</span></label>
+                    <input type="text" placeholder="First Name">
+                </div>
+                <div class="form-inputs">
+                    <label for="">Last Name <span>*</span></label>
+                    <input type="text" placeholder="Surname">
+
+                </div>
+                <div class="form-inputs">
+                    <label for="">Email Address <span>*</span></label>
+                    <input type="text" placeholder="Add Email">
+
+                </div>
+                <div class="form-inputs">
+                    <label for="">Subject <span>*</span></label>
+                    <input type="text" placeholder="Subject">
+
+                </div>
+                <div class="form-inputs">
+                    <label for="">Telephone <span>*</span></label>
+                    <input type="text" placeholder="+(263) 000 000 000">
+
+                </div>
+                <div class="form-inputs">
+                    <label for="">Message <span>*</span></label>
+                    <textarea cols="30" rows="10" placeholder="Add  Text"></textarea>
+
+                </div>
+                <input class="input" type="submit" value="Send Message">
             </form>
         </section>
 
@@ -285,8 +314,9 @@
 
     </main>
 
+
+    <script src="./js/swiper-bundle.min.js" defer></script>
     <script src="./js/main.js"></script>
-    <script src="./js/swiper-bundle.min.js"></script>
 </body>
 
 </html>
