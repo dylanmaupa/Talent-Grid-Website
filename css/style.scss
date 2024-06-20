@@ -16,6 +16,71 @@ main {
     color: #22375C;
 }
 
+#contact-hero {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+#contact-cards {
+    text-align: center;
+    margin-top: 90px;
+    padding: 0 90px;
+
+    h2 {
+        font-size: 45px;
+        color: #22375C;
+    }
+
+    p {
+        font-size: 24px;
+        margin-top: 20px;
+        padding-inline: 160px;
+    }
+
+    .wrapper {
+        display: flex;
+        margin-top: 80px;
+        padding: 0 40px;
+        justify-content: center;
+        gap: 30px;
+
+        .card {
+            padding: 60px 60px;
+            box-shadow:0px 4px 34px 5px #716D6D1C;
+            border-radius: 30px;
+            width: 100%;
+            cursor: pointer;
+            img {
+                background: #2193D1;
+                border-radius: 100%;
+                padding: 10px;
+                width: 60px;
+                height: 60px;
+            }
+
+            h4{
+                margin-top: 10px;
+                font-size: 24px;
+                font-weight: 700;
+            }
+            p{
+                font-size: 18px;
+                margin: 30px 0;
+                padding: 0;
+            }
+
+            a{
+                color: #2193D1;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
 .info {
     background: #0F1C34;
     color: #fff;
@@ -379,16 +444,41 @@ nav {
 
     .wrapper {
         display: grid;
+        position: relative;
         // width: 100%;
         // gap: 20px;
         grid-auto-flow: column;
         gap: 16px;
         overflow-y: hidden;
         // grid-template-columns: calc((100%/3) - 12px);
+        height: 700px;
+
+        .left-arrow {
+            transform: rotate(180deg);
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            cursor: pointer;
+            z-index: 8;
+        }
+
+        .right-arrow {
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translate(-50%);
+            cursor: pointer;
+            z-index: 5;
+        }
+
+        &::-webkit-scrollbar {
+            visibility: hidden;
+        }
 
         .service {
             position: relative;
             width: 400px;
+            height: 400px;
 
             .img {
                 width: 100%;
@@ -700,6 +790,20 @@ footer {
 }
 
 @media screen and (max-width:1200px) {
+
+    #contact-cards{
+        padding:0 30px;
+        p{
+            padding-inline:60px;
+        }
+
+        .wrapper{
+            padding: 0;
+            .card{
+                padding: 20px;
+            }
+        }
+    }
     nav {
         justify-content: space-between;
         padding-inline: 30px;
@@ -797,6 +901,21 @@ footer {
 }
 
 @media screen and (max-width:500px) {
+
+    #contact-cards{
+        h2{
+            font-size: 27px;
+        }
+
+        p{
+            padding-inline: 10px;
+            font-size: 14px;
+        }
+
+        .wrapper{
+            flex-direction: column;
+        }
+    }
 
     .info {
         display: none;
