@@ -442,34 +442,38 @@ nav {
         margin: 20px 0;
     }
 
-    .wrapper {
-        display: grid;
+    .wrapper{
         position: relative;
-        // width: 100%;
-        // gap: 20px;
-        grid-auto-flow: column;
-        gap: 16px;
-        overflow-y: hidden;
-        // grid-template-columns: calc((100%/3) - 12px);
-        height: 700px;
-
         .left-arrow {
             transform: rotate(180deg);
             position: absolute;
-            left: -15px;
-            top: 50%;
+            left: -60px;
+            top: 40%;
             cursor: pointer;
             z-index: 8;
         }
 
         .right-arrow {
             position: absolute;
-            right: -15px;
-            top: 50%;
+            right: -90px;
+            top: 40%;
             transform: translate(-50%);
             cursor: pointer;
             z-index: 5;
         }
+    }
+
+    .carousel {
+        display: grid;
+        position: relative;
+        // width: 100%;
+        // gap: 20px;
+        grid-auto-flow: column;
+        gap: 16px;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        // grid-template-columns: calc((100%/3) - 12px);
+        height: 700px;
 
         &::-webkit-scrollbar {
             visibility: hidden;
@@ -521,6 +525,13 @@ nav {
                 background: #22375C;
                 color: #fff;
             }
+        }
+    }
+    .carousel.dragging{
+
+        .service{
+            cursor: grab;
+            user-select: none;
         }
     }
 }
@@ -807,10 +818,23 @@ footer {
     nav {
         justify-content: space-between;
         padding-inline: 30px;
+        position: relative;
+        z-index: 99;
 
         ul {
-            gap: 30px;
             display: none;
+        }
+
+        ul.navActive{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            z-index: 9;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 30px 0;
         }
 
         .hamburger {
@@ -1056,8 +1080,17 @@ footer {
             font-size: 28px;
         }
 
-        .wrapper {
+        .carousel{
+            height: 650px;
+        }
 
+        .wrapper {
+            .right-arrow{
+                right: -15px;
+            }
+            .left-arrow{
+                left: -15px;
+            }
             .service {
                 width: 300px;
 

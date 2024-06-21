@@ -374,48 +374,52 @@ nav ul a {
   margin: 20px 0;
 }
 #services .wrapper {
-  display: grid;
   position: relative;
-  grid-auto-flow: column;
-  gap: 16px;
-  overflow-y: hidden;
-  height: 700px;
 }
 #services .wrapper .left-arrow {
   transform: rotate(180deg);
   position: absolute;
-  left: -15px;
-  top: 50%;
+  left: -60px;
+  top: 40%;
   cursor: pointer;
   z-index: 8;
 }
 #services .wrapper .right-arrow {
   position: absolute;
-  right: -15px;
-  top: 50%;
+  right: -90px;
+  top: 40%;
   transform: translate(-50%);
   cursor: pointer;
   z-index: 5;
 }
-#services .wrapper::-webkit-scrollbar {
+#services .carousel {
+  display: grid;
+  position: relative;
+  grid-auto-flow: column;
+  gap: 16px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  height: 700px;
+}
+#services .carousel::-webkit-scrollbar {
   visibility: hidden;
 }
-#services .wrapper .service {
+#services .carousel .service {
   position: relative;
   width: 400px;
   height: 400px;
 }
-#services .wrapper .service .img {
+#services .carousel .service .img {
   width: 100%;
 }
-#services .wrapper .service .img img {
+#services .carousel .service .img img {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-#services .wrapper .service .textBox {
+#services .carousel .service .textBox {
   cursor: pointer;
   left: 20px;
   right: 20px;
@@ -428,18 +432,24 @@ nav ul a {
   height: 350px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-#services .wrapper .service .textBox .icon {
+#services .carousel .service .textBox .icon {
   margin: 30px 0;
 }
-#services .wrapper .service .textBox .icon img {
+#services .carousel .service .textBox .icon img {
   width: 100px;
 }
-#services .wrapper .service .textBox p {
+#services .carousel .service .textBox p {
   font-size: 24px;
 }
-#services .wrapper .service .textBox:hover {
+#services .carousel .service .textBox:hover {
   background: #22375C;
   color: #fff;
+}
+#services .carousel.dragging .service {
+  cursor: grab;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 #contact {
@@ -665,10 +675,22 @@ footer .copyright p {
   nav {
     justify-content: space-between;
     padding-inline: 30px;
+    position: relative;
+    z-index: 99;
   }
   nav ul {
-    gap: 30px;
     display: none;
+  }
+  nav ul.navActive {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 30px 0;
   }
   nav .hamburger {
     width: 40px;
@@ -846,6 +868,15 @@ footer .copyright p {
   }
   #services h2 {
     font-size: 28px;
+  }
+  #services .carousel {
+    height: 650px;
+  }
+  #services .wrapper .right-arrow {
+    right: -15px;
+  }
+  #services .wrapper .left-arrow {
+    left: -15px;
   }
   #services .wrapper .service {
     width: 300px;
